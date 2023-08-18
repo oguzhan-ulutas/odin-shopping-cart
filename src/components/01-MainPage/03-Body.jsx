@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 const Body = () => {
   return (
     <div className="body">
+      <img
+        src="src/img/andie-gomez-acebo-sEq4onJnWrI-unsplash.jpg"
+        alt="A girl wearing some jewelry"
+      />
       <div className="body-content">
         <div className="body-header">
           Welcome to best Jewelry Store of the world!!
@@ -24,10 +28,6 @@ const Body = () => {
           <button>Shop now</button>
         </Link>
       </div>
-      <img
-        src="src/img/andie-gomez-acebo-sEq4onJnWrI-unsplash.jpg"
-        alt="A girl wearing some jewelry"
-      />
     </div>
   );
 };

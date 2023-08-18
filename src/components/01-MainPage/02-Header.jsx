@@ -6,7 +6,7 @@ const Header = () => {
         <div>Home</div>
         <div>Store</div>
         <div>About</div>
-        <img src="/src/img/shopping-cart.png" alt="Shopping cart" />
+        <img src="/src/img/carts.png" alt="Shopping cart" />
       </div>
     </div>
   );
