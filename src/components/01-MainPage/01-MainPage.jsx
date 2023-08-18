@@ -1,7 +1,11 @@
-import { useState } from "react";
+import Header from "./02-Header";
 
-function App() {
-  return <></>;
+function MainPage() {
+  return (
+    <div className="main-page">
+      <Header />
+    </div>
+  );
 }
 
-export default App;
+export default MainPage;
