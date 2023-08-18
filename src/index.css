@@ -18,7 +18,7 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: rgb(248, 251, 251);
   text-decoration: inherit;
 }
 a:hover {
@@ -99,8 +99,8 @@ button:focus-visible {
   font-size: 1.5vw;
   font-weight: 400;
 }
-.header-container > img {
-  width: 4vw;
+.header-container > a:nth-child(4) > img {
+  width: 2.5vw;
 }
 
 .body {
@@ -134,4 +134,8 @@ button:focus-visible {
 
 .footer {
   font-weight: 600;
+}
+
+.about {
+  font-size: 5vw;
 }
