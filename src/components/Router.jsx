@@ -12,7 +12,7 @@ const Router = () => {
       element: <MainPage />,
     },
     {
-      path: "/shop",
+      path: "/store",
     },
     {
       path: "/about",
