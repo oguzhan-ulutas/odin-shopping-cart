@@ -13,8 +13,8 @@ const Star = ({ rating, id }) => {
     return (
       <div key={uuidv4()}>
         <svg
-          width={"5rem"}
-          height={"5rem"}
+          width={"3rem"}
+          height={"3rem"}
           viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -40,7 +40,7 @@ const Star = ({ rating, id }) => {
       </div>
     );
   });
-  return <div>{stars} </div>;
+  return <>{stars} </>;
 };
 
 export default Star;
