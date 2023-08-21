@@ -135,6 +135,9 @@ button:focus-visible {
 .footer {
   font-weight: 600;
 }
+.footer a {
+  color: #0b0d2e;
+}
 
 .about {
   font-size: 5vw;
@@ -180,4 +183,13 @@ button:focus-visible {
   align-items: center;
   gap: 1rem;
   background-color: rgb(223, 169, 39);
+}
+.jewel-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.jewel-form input {
+  width: 4vw;
 }

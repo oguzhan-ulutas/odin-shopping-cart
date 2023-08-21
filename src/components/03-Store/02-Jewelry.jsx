@@ -29,13 +29,16 @@ const Jewelry = () => {
         <p>{item.title}</p>
         <p>$ {item.price}</p>
         <div className="stars">
-          <Star rating={item.rating} id={item.id} /> {item.rating.count}
+          <Star rating={item.rating} /> {item.rating.count}
         </div>
-        <p>{item.description.slice(0, 50)}...</p>
-        <button className="jewel-add-to-cart">
-          <img src="src/img/shopping-cart.png" alt="Cart" />
-          ADD TO CART
-        </button>
+        <form className="jewel-form">
+          <label htmlFor="quantity">Qty :</label>
+          <input type="number" id="quantity" />
+          <button className="jewel-add-to-cart">
+            <img src="src/img/shopping-cart.png" alt="Cart" />
+            ADD TO CART
+          </button>
+        </form>
       </div>
     );
   });

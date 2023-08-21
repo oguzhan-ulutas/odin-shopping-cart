@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
 
-const Star = ({ rating, id }) => {
+const Star = ({ rating }) => {
   const { rate } = rating;
 
   const wholeStar = Math.floor(rate);
