@@ -44,8 +44,11 @@ const Jewelry = () => {
     });
   };
 
-  const removeClassfromJewel = () => {
-    const jewelToRemoveClass = document.querySelector(".jewel-rendered");
+  const removeClassFromJewel = () => {
+    const jewelToRemoveClass = document.querySelector(".jewel-container");
+
+    console.log("remove class from jewel");
+
     if (jewelToRemoveClass) {
       jewelToRemoveClass.classList.remove("hidden");
     }
@@ -59,7 +62,7 @@ const Jewelry = () => {
         className="jewel"
         onClick={(e) => {
           renderJewel(e);
-          removeClassfromJewel();
+          removeClassFromJewel(e);
         }}
       >
         <img className="jewel-img" src={item.image} alt={item.description} />
@@ -80,18 +83,21 @@ const Jewelry = () => {
     );
   });
 
-  // Deleting bigger jewel div
-  const deleteJewel = () => {
-    const jewelToDelete = document.querySelector(".jewel-rendered");
-    if (jewelToDelete) {
-      jewelToDelete.classList.add("hidden");
+  // Hiding bigger jewel div
+  const addClassToJewel = () => {
+    const jewelToAddClass = document.querySelector(".jewel-container");
+
+    console.log("add class to jewel");
+
+    if (jewelToAddClass) {
+      jewelToAddClass.classList.add("hidden");
     }
   };
 
   return (
-    <div className="body-store" onClick={deleteJewel}>
+    <div className="body-store">
       {renderedJewelry}
-      <Jewel jewel={jewel} />
+      <Jewel jewel={jewel} addClassToJewel={addClassToJewel} />
     </div>
   );
 };

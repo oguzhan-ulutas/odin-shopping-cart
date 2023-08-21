@@ -150,6 +150,7 @@ button:focus-visible {
   align-items: center;
   gap: 2vw;
   padding: 2rem;
+  z-index: 1;
 }
 .jewel {
   display: flex;
@@ -164,6 +165,7 @@ button:focus-visible {
   box-shadow: 0px 5px 5px 5px rgb(118, 127, 166, 0.5);
   flex: 0 0 auto;
   padding: 1rem;
+  z-index: 2;
 }
 .jewel-img {
   width: 5vw;
@@ -209,13 +211,28 @@ button:focus-visible {
 }
 
 .jewel-rendered {
-  position: absolute;
   background-color: rgb(91, 127, 200);
   font-size: 1vw;
   padding: 2vw;
-  max-width: 60vw;
+  max-width: 70vw;
+  z-index: 11;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3vw;
 }
-.jewel-rendered.hidden {
+.jewel-container.hidden {
   visibility: hidden;
   z-index: -1;
+}
+.jewel-container {
+  width: 100%;
+  height: 114%;
+  background-color: rgb(0, 0, 0, 0.5);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
 }
