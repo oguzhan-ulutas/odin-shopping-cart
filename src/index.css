@@ -193,3 +193,29 @@ button:focus-visible {
 .jewel-form input {
   width: 4vw;
 }
+
+.error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  font-size: medium;
+  color: #1a1a1a;
+  margin: 20vw;
+}
+.error a {
+  color: blue;
+}
+
+.jewel-rendered {
+  position: absolute;
+  background-color: rgb(91, 127, 200);
+  font-size: 1vw;
+  padding: 2vw;
+  max-width: 60vw;
+}
+.jewel-rendered.hidden {
+  visibility: hidden;
+  z-index: -1;
+}
