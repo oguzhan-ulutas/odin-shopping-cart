@@ -236,3 +236,6 @@ button:focus-visible {
   align-items: center;
   z-index: 10;
 }
+.jewel-container > div > img {
+  max-width: 50%;
+}

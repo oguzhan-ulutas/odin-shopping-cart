@@ -1,49 +1,9 @@
 import { useEffect, useState } from "react";
 import Star from "./03-Star";
-import { Outlet } from "react-router-dom";
 import Jewel from "./04-Jewel";
+import PropTypes from "prop-types";
 
-const Jewelry = () => {
-  const [jewelryData, setJewelryData] = useState([]);
-  const [jewel, setJewel] = useState({
-    id: 0,
-    title: "",
-    price: 0,
-    description: "",
-    category: "",
-    image: "",
-    rating: { rate: 0, count: 0 },
-  });
-
-  useEffect(() => {
-    const getJewelry = async () => {
-      try {
-        const response = await fetch(
-          `https://fakestoreapi.com/products/category/jewelery`
-        );
-
-        const data = await response.json();
-
-        setJewelryData(data);
-
-        return;
-      } catch {
-        alert("Server is busy, please try again later");
-      }
-    };
-    getJewelry();
-  }, []);
-
-  const renderJewel = (e) => {
-    const jewelId = e.target.id;
-
-    jewelryData.forEach((data) => {
-      if (data.id == jewelId) {
-        setJewel(data);
-      }
-    });
-  };
-
+const Jewelry = ({ jewelryData, jewel, cart, renderJewel, addToCart }) => {
   const removeClassFromJewel = () => {
     const jewelToRemoveClass = document.querySelector(".jewel-container");
 
@@ -52,6 +12,10 @@ const Jewelry = () => {
     if (jewelToRemoveClass) {
       jewelToRemoveClass.classList.remove("hidden");
     }
+  };
+
+  const stopBubbling = (e) => {
+    e.stopPropagation();
   };
 
   const renderedJewelry = jewelryData.map((item) => {
@@ -71,7 +35,12 @@ const Jewelry = () => {
         <div className="stars">
           <Star rating={item.rating} /> {item.rating.count}
         </div>
-        <form className="jewel-form">
+        <form
+          className="jewel-form"
+          id={item.id}
+          onSubmit={addToCart}
+          onClick={stopBubbling}
+        >
           <label htmlFor="quantity">Qty :</label>
           <input type="number" id="quantity" />
           <button className="jewel-add-to-cart">
@@ -97,7 +66,11 @@ const Jewelry = () => {
   return (
     <div className="body-store">
       {renderedJewelry}
-      <Jewel jewel={jewel} addClassToJewel={addClassToJewel} />
+      <Jewel
+        jewel={jewel}
+        addClassToJewel={addClassToJewel}
+        stopBubbling={stopBubbling}
+      />
     </div>
   );
 };

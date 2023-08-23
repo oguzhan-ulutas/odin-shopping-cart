@@ -1,13 +1,10 @@
 import Star from "./03-Star";
 
-const Jewel = ({ jewel, addClassToJewel }) => {
+const Jewel = ({ jewel, addClassToJewel, stopBubbling }) => {
   if (!jewel.id) {
     return;
   }
 
-  const stopBubbling = (e) => {
-    e.stopPropagation();
-  };
   return (
     <div className="jewel-container" onClick={addClassToJewel}>
       <div key={jewel.id * 2} className="jewel-rendered" onClick={stopBubbling}>
