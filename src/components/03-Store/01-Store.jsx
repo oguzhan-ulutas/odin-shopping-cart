@@ -2,6 +2,7 @@ import Header from "../01-MainPage/02-Header";
 import Footer from "../01-MainPage/04-Footer";
 import Jewelry from "./02-Jewelry";
 import { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 
 const Store = () => {
   const [jewelryData, setJewelryData] = useState([]);
@@ -83,7 +84,7 @@ const Store = () => {
 
   return (
     <div className="main-page">
-      <Header />
+      <Header cart={cart} />
       <Jewelry
         jewelryData={jewelryData}
         jewel={jewel}
@@ -94,6 +95,10 @@ const Store = () => {
       <Footer />
     </div>
   );
+};
+
+Header.prototype = {
+  cart: PropTypes.array,
 };
 
 export default Store;

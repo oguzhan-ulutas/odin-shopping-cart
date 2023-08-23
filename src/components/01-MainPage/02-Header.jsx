@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
+import Qty from "./05-Quantity";
+import PropTypes from "prop-types";
 
-const Header = () => {
+const Header = ({ cart }) => {
   return (
     <div className="header">
       <div className="header-head">Jewelery Hell</div>
@@ -14,13 +16,17 @@ const Header = () => {
         <Link to="/about">
           <div>About</div>
         </Link>
-
-        <Link to="/cart">
+        <Link to="/cart" className="cart-item">
           <img src="/src/img/carts.png" alt="Shopping cart" />
+          {cart.length ? <Qty cart={cart} /> : null}
         </Link>
       </div>
     </div>
   );
+};
+
+Header.prototype = {
+  cart: PropTypes.array,
 };
 
 export default Header;
