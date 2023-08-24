@@ -243,8 +243,8 @@ button:focus-visible {
 .cart-item {
   align-self: center;
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-template-rows: 1fr 2fr;
+  grid-template-columns: 2.5vw 2vw;
+  grid-template-rows: 2vw 2.5vw;
   padding: 5px;
 }
 .cart-item img {
@@ -256,4 +256,9 @@ button:focus-visible {
   background-color: red;
   grid-area: 1 / 2 / 2 / 3;
   padding: 3px;
+  font-size: 1rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -1,4 +1,4 @@
-import Star from "./03-Star";
+import Star from "./02-Star";
 
 const Jewel = ({ jewel, addClassToJewel, stopBubbling }) => {
   if (!jewel.id) {

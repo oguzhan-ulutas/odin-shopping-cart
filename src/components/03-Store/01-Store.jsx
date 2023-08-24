@@ -1,104 +1,76 @@
-import Header from "../01-MainPage/02-Header";
-import Footer from "../01-MainPage/04-Footer";
-import Jewelry from "./02-Jewelry";
-import { useState, useEffect } from "react";
-import PropTypes from "prop-types";
+import Star from "./02-Star";
+import Jewel from "./03-Jewel";
 
-const Store = () => {
-  const [jewelryData, setJewelryData] = useState([]);
-  const [jewel, setJewel] = useState({
-    id: 0,
-    title: "",
-    price: 0,
-    description: "",
-    category: "",
-    image: "",
-    rating: { rate: 0, count: 0 },
-  });
-  const [cart, setCart] = useState([]);
+const Store = ({ jewelryData, jewel, cart, renderJewel, addToCart }) => {
+  const removeClassFromJewel = () => {
+    const jewelToRemoveClass = document.querySelector(".jewel-container");
 
-  useEffect(() => {
-    const getJewelry = async () => {
-      try {
-        const response = await fetch(
-          `https://fakestoreapi.com/products/category/jewelery`
-        );
+    console.log("remove class from jewel");
 
-        const data = await response.json();
-
-        setJewelryData(data);
-
-        return;
-      } catch {
-        alert("Server is busy, please try again later");
-      }
-    };
-    getJewelry();
-  }, []);
-
-  const renderJewel = (e) => {
-    const jewelId = e.target.id;
-
-    jewelryData.forEach((data) => {
-      if (data.id == jewelId) {
-        setJewel(data);
-      }
-    });
+    if (jewelToRemoveClass) {
+      jewelToRemoveClass.classList.remove("hidden");
+    }
   };
 
-  // Adding items to cart
-  const addToCart = (e) => {
-    e.preventDefault();
+  const stopBubbling = (e) => {
     e.stopPropagation();
+  };
 
-    let boughtItem = {};
-    jewelryData.forEach((item) => {
-      if (item.id == e.target.id) {
-        boughtItem = {
-          id: item.id,
-          image: item.image,
-          title: item.title,
-          qty: e.target.elements[0].value,
-        };
-      }
-    });
+  const renderedJewelry = jewelryData.map((item) => {
+    return (
+      <div
+        key={item.id}
+        id={item.id}
+        className="jewel"
+        onClick={(e) => {
+          renderJewel(e);
+          removeClassFromJewel(e);
+        }}
+      >
+        <img className="jewel-img" src={item.image} alt={item.description} />
+        <p>{item.title}</p>
+        <p>$ {item.price}</p>
+        <div className="stars">
+          <Star rating={item.rating} /> {item.rating.count}
+        </div>
+        <form
+          className="jewel-form"
+          id={item.id}
+          onSubmit={addToCart}
+          onClick={stopBubbling}
+        >
+          <label htmlFor="quantity">Qty :</label>
+          <input type="number" id="quantity" />
+          <button className="jewel-add-to-cart">
+            <img src="src/img/shopping-cart.png" alt="Cart" />
+            ADD TO CART
+          </button>
+        </form>
+      </div>
+    );
+  });
 
-    if (cart.length === 0) {
-      setCart([boughtItem]);
-    } else {
-      cart.forEach((item) => {
-        if (item.id == boughtItem.id) {
-          boughtItem.qty = Number(boughtItem.qty) + Number(item.qty);
+  // Hiding bigger jewel div
+  const addClassToJewel = () => {
+    const jewelToAddClass = document.querySelector(".jewel-container");
 
-          const arr = cart.filter((filtered) => filtered.id != boughtItem.id);
-          arr.push(boughtItem);
-          setCart(arr);
-        } else {
-          setCart([...cart, boughtItem]);
-        }
-      });
+    console.log("add class to jewel");
+
+    if (jewelToAddClass) {
+      jewelToAddClass.classList.add("hidden");
     }
-
-    console.log(cart);
   };
 
   return (
-    <div className="main-page">
-      <Header cart={cart} />
-      <Jewelry
-        jewelryData={jewelryData}
+    <div className="body-store">
+      {renderedJewelry}
+      <Jewel
         jewel={jewel}
-        cart={cart}
-        renderJewel={renderJewel}
-        addToCart={addToCart}
+        addClassToJewel={addClassToJewel}
+        stopBubbling={stopBubbling}
       />
-      <Footer />
     </div>
   );
-};
-
-Header.prototype = {
-  cart: PropTypes.array,
 };
 
 export default Store;
