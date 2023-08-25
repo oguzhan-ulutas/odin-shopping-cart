@@ -25,7 +25,7 @@ const Header = ({ cart }) => {
   );
 };
 
-Header.prototype = {
+Header.protoTypes = {
   cart: PropTypes.array,
 };
 
