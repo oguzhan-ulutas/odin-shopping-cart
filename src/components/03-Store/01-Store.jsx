@@ -68,6 +68,7 @@ const Store = ({ jewelryData, jewel, cart, renderJewel, addToCart }) => {
         jewel={jewel}
         addClassToJewel={addClassToJewel}
         stopBubbling={stopBubbling}
+        addToCart={addToCart}
       />
     </div>
   );

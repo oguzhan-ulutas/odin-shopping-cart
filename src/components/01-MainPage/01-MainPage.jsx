@@ -64,6 +64,7 @@ function MainPage() {
           image: item.image,
           title: item.title,
           qty: e.target.elements[0].value,
+          price: item.price,
         };
       }
     });

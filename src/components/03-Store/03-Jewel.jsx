@@ -1,6 +1,6 @@
 import Star from "./02-Star";
 
-const Jewel = ({ jewel, addClassToJewel, stopBubbling }) => {
+const Jewel = ({ jewel, addClassToJewel, stopBubbling, addToCart }) => {
   if (!jewel.id) {
     return;
   }
@@ -20,7 +20,12 @@ const Jewel = ({ jewel, addClassToJewel, stopBubbling }) => {
           <div className="stars">
             <Star rating={jewel.rating} /> {jewel.rating.count}
           </div>
-          <form className="jewel-form">
+          <form
+            id={jewel.id}
+            className="jewel-form"
+            onSubmit={addToCart}
+            onClick={stopBubbling}
+          >
             <label htmlFor="quantity">Qty :</label>
             <input type="number" id="quantity" />
             <button className="jewel-add-to-cart">
