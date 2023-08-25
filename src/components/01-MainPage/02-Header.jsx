@@ -17,7 +17,7 @@ const Header = ({ cart }) => {
           <div>About</div>
         </Link>
         <Link to="/cart" className="cart-item">
-          <img src="/src/img/carts.png" alt="Shopping cart" />
+          <img src="/src/assets/carts.png" alt="Shopping cart" />
           {cart.length ? <Qty cart={cart} /> : null}
         </Link>
       </div>

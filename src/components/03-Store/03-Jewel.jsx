@@ -32,7 +32,7 @@ const Jewel = ({ jewel, addClassToJewel, stopBubbling, addToCart }) => {
             <label htmlFor="quantity">Qty :</label>
             <input type="number" id="quantity" />
             <button className="jewel-add-to-cart">
-              <img src="src/img/shopping-cart.png" alt="Cart" />
+              <img src="src/assets/shopping-cart.png" alt="Cart" />
               ADD TO CART
             </button>
           </form>
