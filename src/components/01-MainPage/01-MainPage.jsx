@@ -101,7 +101,7 @@ function MainPage() {
           addToCart={addToCart}
         />
       ) : section === "cart" ? (
-        <Cart />
+        <Cart cart={cart} />
       ) : (
         <Body />
       )}

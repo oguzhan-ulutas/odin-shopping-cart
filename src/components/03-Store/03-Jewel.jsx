@@ -23,7 +23,10 @@ const Jewel = ({ jewel, addClassToJewel, stopBubbling, addToCart }) => {
           <form
             id={jewel.id}
             className="jewel-form"
-            onSubmit={addToCart}
+            onSubmit={(e) => {
+              addToCart(e);
+              addClassToJewel();
+            }}
             onClick={stopBubbling}
           >
             <label htmlFor="quantity">Qty :</label>

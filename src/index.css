@@ -262,3 +262,52 @@ button:focus-visible {
   justify-content: center;
   align-items: center;
 }
+
+.cart-container {
+  padding: 2vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5vw;
+  font-size: 2vw;
+}
+.carts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2vw;
+}
+.bought-item {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-rows: 2fr 1fr;
+  gap: 1vw;
+  border: solid 1px black;
+  border-radius: 2vw;
+  padding: 2vw;
+  width: 60vw;
+  height: 20vh;
+  background-color: rgb(101, 37, 172, 0.2);
+}
+.bought-item img {
+  max-width: 10vw;
+  max-height: 15vh;
+  grid-area: 1 / 1 / 3 / 2;
+}
+.bought-item-title {
+  grid-area: 1 / 2 / 2 / 5;
+}
+.bought-item-subtotal {
+  font-weight: 700;
+}
+.grand-total {
+  font-size: 3vw;
+  font-weight: 900;
+}
+.payment {
+  background-color: rgb(223, 169, 39);
+  padding: 2vw;
+  border-radius: 1vw;
+}
