@@ -4,7 +4,7 @@ const Body = () => {
   return (
     <div className="body">
       <img
-        src="src/assets/andie-gomez-acebo-sEq4onJnWrI-unsplash.jpg"
+        src="public/assets/andie-gomez-acebo-sEq4onJnWrI-unsplash.jpg"
         alt="A girl wearing some jewelry"
       />
       <div className="body-content">
