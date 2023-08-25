@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Qty from "./05-Quantity";
 import PropTypes from "prop-types";
+import carts from "/src/assets/carts.png";
 
 const Header = ({ cart }) => {
   return (
@@ -17,7 +18,7 @@ const Header = ({ cart }) => {
           <div>About</div>
         </Link>
         <Link to="/cart" className="cart-item">
-          <img src="public/assets/carts.png" alt="Shopping cart" />
+          <img src={carts} alt="Shopping cart" />
           {cart.length ? <Qty cart={cart} /> : null}
         </Link>
       </div>

@@ -1,5 +1,6 @@
 import Star from "./02-Star";
 import Jewel from "./03-Jewel";
+import shoppingCart from "/src/assets/shopping-cart.png";
 
 const Store = ({ jewelryData, jewel, cart, renderJewel, addToCart }) => {
   const removeClassFromJewel = () => {
@@ -42,7 +43,7 @@ const Store = ({ jewelryData, jewel, cart, renderJewel, addToCart }) => {
           <label htmlFor="quantity">Qty :</label>
           <input type="number" id="quantity" />
           <button className="jewel-add-to-cart">
-            <img src="public/assets/shopping-cart.png" alt="Cart" />
+            <img src={shoppingCart} alt="Cart" />
             ADD TO CART
           </button>
         </form>

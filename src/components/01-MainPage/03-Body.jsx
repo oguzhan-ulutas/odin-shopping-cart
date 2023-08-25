@@ -1,12 +1,10 @@
 import { Link } from "react-router-dom";
+import andie from "/src/assets/andie.jpg";
 
 const Body = () => {
   return (
     <div className="body">
-      <img
-        src="public/assets/andie-gomez-acebo-sEq4onJnWrI-unsplash.jpg"
-        alt="A girl wearing some jewelry"
-      />
+      <img src={andie} alt="A girl wearing some jewelry" />
       <div className="body-content">
         <div className="body-header">
           Welcome to best Jewelry Store of the world!!

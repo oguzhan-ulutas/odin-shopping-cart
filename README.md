@@ -2,7 +2,7 @@
 
 [The Odin Project exercise](https://www.theodinproject.com/lessons/node-path-react-new-shopping-cart) to learn React.
 
-[Live Preview](https://memory-game-oguzhan.netlify.app/)
+[Live Preview](https://oguzhan-shopping-app.netlify.app/)
 
 **What I learned with this project;**
 
